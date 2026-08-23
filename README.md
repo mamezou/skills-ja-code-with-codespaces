@@ -1,44 +1,47 @@
-# Code with GitHub Codespaces and Visual Studio Code
+# Code with GitHub Codespaces and Visual Studio Code（日本語版）
 
-_Develop your project with a pre-configured development environment using Codespaces!_
+_Codespaces であらかじめ設定された開発環境を使い、プロジェクトを開発する。_
 
-## Welcome
+> このリポジトリは GitHub Skills「[Code with Codespaces](https://github.com/skills/code-with-codespaces)」（MIT License）の日本語版です。
+> 演習の進め方と自動チェックの仕組みは原本と同じで、Issue に投稿される手順の本文だけを日本語にしています。
 
-GitHub Codespaces is a development environment that is hosted in the cloud.
+## ようこそ
 
-- **Who this is for**: Developers, DevOps Engineers, Engineering Managers, Product Managers.
-- **What you'll learn**: How to create, configure, and use a codespace.
-- **What you'll build**: A codespace configuration with customizations tailored to a repository.
-- **Prerequisites**: Familiar with [Visual Studio Code Docs](https://code.visualstudio.com/docs).
-- **How long**: This exercise can be completed in less than an hour.
+GitHub Codespaces は、クラウド上でホストされる開発環境です。
 
-In this exercise, you will:
+- **対象**: 開発者、DevOps エンジニア、エンジニアリングマネージャー、プロダクトマネージャー
+- **学ぶこと**: codespace の作成、設定、利用方法
+- **作るもの**: リポジトリに合わせてカスタマイズした codespace の設定
+- **前提**: [Visual Studio Code のドキュメント](https://code.visualstudio.com/docs)の内容を把握していること
+- **所要時間**: 1 時間以内
 
-1. Create your first codespace and change some code
-1. Customize your codespace
-1. Practice using the codespace
+この演習で行うこと:
 
-### How to start this exercise
+1. 最初の codespace を作り、コードを変更する
+1. codespace をカスタマイズする
+1. codespace を使って動作を確かめる
 
-Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
+### 演習の始め方
 
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=code-with-codespaces&owner=%40me&name=skills-code-with-codespaces&description=Exercise:+Code+with+Codespaces&visibility=public)
+演習を自分のアカウントにコピーし、Octocat（Mona）が最初のレッスンを準備するまで **20 秒ほど**待ってから、**ページを再読み込み**してください。
+
+[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=mamezou&template_name=skills-ja-code-with-codespaces&owner=%40me&name=skills-code-with-codespaces&description=Exercise:+Code+with+Codespaces&visibility=public)
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>うまくいかないとき 🤷</summary><br/>
 
-When copying the exercise, we recommend the following settings:
+演習をコピーするときは、次の設定を推奨します。
 
-- For owner, choose your personal account or an organization to host the repository.
-- We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
+- Owner は自分の個人アカウント（または演習を置く Organization）を選ぶ。
+- private リポジトリは [Actions の実行時間を消費する](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions)ため、public リポジトリを推奨します。
 
-If the exercise isn't ready in 20 seconds:
+20 秒待っても演習が始まらないときは、次を確認してください。
 
-1. After your new repository is created, wait about 20 seconds, then refresh the page.
-2. Follow the step-by-step instructions in the issue created in your repository.
-3. If the page doesn't refresh automatically, please check the [Actions](../../actions) tab.
-   - Check to see if a job is running. Sometimes it simply takes a bit longer.
-   - If the page shows a failed job, please submit an issue. Nice, you found a bug! 🐛
+1. 新しいリポジトリが作られたら 20 秒ほど待ち、ページを再読み込みします。
+2. リポジトリに作られた Issue の手順に沿って進めます。
+3. ページが自動で更新されないときは、[Actions](../../actions) タブを確認してください。
+   - ジョブが実行中かどうかを見る。少し長くかかることがあります。
+   - ジョブが失敗している場合は、講師に知らせてください。
 
 </details>
 

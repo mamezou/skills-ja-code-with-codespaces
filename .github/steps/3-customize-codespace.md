@@ -1,30 +1,30 @@
-## Step 3: Add Features
+## Step 3: Features を追加する
 
-You can further customize your codespace by adding container feature, VS Code extensions, VS Code settings, host requirements, and much more.
+コンテナーの feature、VS Code の拡張機能、VS Code の設定、ホストの要件など、さらに細かく codespace をカスタマイズできます。
 
-Let's add the GitHub CLI, extensions to run the python program using VS Code, and a custom script to install some packages when first creating the Codespace.
+GitHub CLI と、VS Code で Python プログラムを実行するための拡張機能、そして codespace の初回作成時にパッケージをインストールする独自スクリプトを追加します。
 
-### ⌨️ Activity: Add support for the Python
+### ⌨️ やること: Python のサポートを追加する
 
-1. In VS Code, open the Command Palette (`CTRL`+`SHIFT`+`P`) and select the below command.
+1. VS Code でコマンドパレット (`CTRL`+`SHIFT`+`P`) を開き、次のコマンドを選びます。
 
    ```txt
    Codespaces: Add Dev Container Configuration Files...
    ```
 
-   <img width="350" alt="vs code configure dev container command" src="../images/configure-dev-container-command.png" />
+   <img width="350" alt="VS Code の dev container 設定コマンド" src="../images/configure-dev-container-command.png" />
 
-1. Select the option `Modify your active configuration...`.
+1. `Modify your active configuration...` を選びます。
 
-1. In the list of features, search for and select `Python` from `devcontainers`.
+1. feature の一覧から `devcontainers` の `Python` を検索して選びます。
 
-   - Instead of the defaults, pick `Configure Options`.
-   - Leave `Install Tools` set to `true`.
-   - Select Python version: `3.10`
+   - 既定値ではなく、`Configure Options` を選びます。
+   - `Install Tools` は `true` のままにします。
+   - Python のバージョンは `3.10` を選びます。
 
-1. Navigate to and open the `.devcontainer/devcontainer.json` file.
+1. `.devcontainer/devcontainer.json` を開きます。
 
-1. Verify a new entry similar to the below was added.
+1. 次のような項目が追加されているか確認します。
 
    ```json
    "features": {
@@ -35,23 +35,23 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
    },
    ```
 
-### ⌨️ Activity: Add VS Code extensions
+### ⌨️ やること: VS Code の拡張機能を追加する
 
-1. In the left navigation, select the **Extension** tab.
+1. 左のナビゲーションで **Extension** タブを選びます。
 
-   <img width="200" alt="vs code extensions tab" src="../images/vs-code-extensions-tab.png" />
+   <img width="200" alt="VS Code の拡張機能タブ" src="../images/vs-code-extensions-tab.png" />
 
-1. Search for `python` and find entries for `Python` and `Python Debugger`.
+1. `python` を検索し、`Python` と `Python Debugger` を見つけます。
 
-   <img width="250" alt="python extensions for vs code" src="../images/python-extensions.png" />
+   <img width="250" alt="VS Code の Python 拡張機能" src="../images/python-extensions.png" />
 
-1. Right click on each entry and select the `Add to devcontainer.json` option.
+1. どちらも右クリックし、`Add to devcontainer.json` を選びます。
 
-   <img width="250" alt="add to devcontainer config button" src="../images/add-to-devcontainer-button.png" />
+   <img width="250" alt="Add to devcontainer.json ボタン" src="../images/add-to-devcontainer-button.png" />
 
-1. Navigate to and open the `.devcontainer/devcontainer.json` file.
+1. `.devcontainer/devcontainer.json` を開きます。
 
-1. Verify a new entry similar to the below was added.
+1. 次のような項目が追加されているか確認します。
 
    ```json
    "customizations": {
@@ -64,29 +64,29 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
    },
    ```
 
-### ⌨️ Activity: Add a custom script
+### ⌨️ やること: 独自スクリプトを追加する
 
-The Dev Container specification provides multiple locations to run [lifecycle scripts](https://containers.dev/implementors/json_reference/#lifecycle-scripts) to further customize your Codespace. Let's add the `postCreateCommand` which runs one time after initial build (or rebuild).
+Dev Container specification には、codespace をさらにカスタマイズするための [ライフサイクルスクリプト](https://containers.dev/implementors/json_reference/#lifecycle-scripts) を実行できる場所が複数あります。初回ビルド (または再ビルド) の後に 1 回だけ実行される `postCreateCommand` を追加します。
 
-1. Use the VS Code file explorer to create a script file with the below name.
+1. VS Code のファイルエクスプローラーで、次の名前のスクリプトファイルを作ります。
 
    ```txt
    .devcontainer/postCreate.sh
    ```
 
-   Alternately, run the below terminal command to create it.
+   または、次のターミナルコマンドでも作れます。
 
    ```bash
    touch .devcontainer/postCreate.sh
    ```
 
-1. Make the script executable by running the below terminal command.
+1. 次のターミナルコマンドで、スクリプトを実行可能にします。
 
    ```bash
    chmod +x .devcontainer/postCreate.sh
    ```
 
-1. Open the `.devcontainer/postCreate.sh` file and add the following code, which will install an animation of a steam locomotive.
+1. `.devcontainer/postCreate.sh` を開き、次のコードを追加します。蒸気機関車のアニメーションをインストールする内容です。
 
    ```bash
    #!/bin/bash
@@ -97,15 +97,15 @@ The Dev Container specification provides multiple locations to run [lifecycle sc
    echo "export PATH=\$PATH:/usr/games" >> ~/.zshrc
    ```
 
-1. Navigate to and open the `.devcontainer/devcontainer.json` file.
+1. `.devcontainer/devcontainer.json` を開きます。
 
-1. Create the `postCreateCommand` entry at the same level (_top level_) as `features`, and `customizations`.
+1. `features` や `customizations` と同じ階層 (_トップレベル_) に `postCreateCommand` の項目を作ります。
 
    ```json
    "postCreateCommand": ".devcontainer/postCreate.sh"
    ```
 
-1. With our new configuration finished, let's commit the changes. Use VS Code's source control tools or the below terminal command.
+1. 新しい設定ができたので、変更をコミットします。VS Code のソース管理の機能を使うか、次のターミナルコマンドを使います。
 
    ```shell
    git add '.devcontainer/devcontainer.json'
@@ -114,34 +114,34 @@ The Dev Container specification provides multiple locations to run [lifecycle sc
    git push
    ```
 
-1. Open the VS Code Command Palette (`CTRL`+`Shift`+`P`) and run the `Codespaces: Rebuild Container` command. Select the **Rebuild** option. A full build is not necessary.
+1. VS Code のコマンドパレット (`CTRL`+`Shift`+`P`) を開き、`Codespaces: Rebuild Container` を実行します。**Rebuild** を選びます。フルビルドは必要ありません。
 
-   <img width="350" alt="rebuild codespace command" src="../images/rebuild-codespace-command.png"/>
+   <img width="350" alt="rebuild codespace コマンド" src="../images/rebuild-codespace-command.png"/>
 
-1. Wait a few minutes for the Codespace to rebuild and VS Code to reconnect.
+1. codespace の再ビルドと VS Code の再接続に数分かかるので待ちます。
 
-1. With the customizations committed, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.
+1. カスタマイズをコミットしたので、Mona が作業を確認しています。少し待って、コメントを見てください。進捗と次の Step が投稿されます。
 
 > [!TIP]
-> You can also configure your account to [install dotfiles](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account), allowing you to combine personal configurations with the project's configuration.
+> アカウントに [dotfiles をインストールする](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account)設定もできます。個人の設定とプロジェクトの設定を組み合わせられます。
 
-### ⌨️ Activity: (optional) Verify our customizations
+### ⌨️ やること: (任意) カスタマイズを確認する
 
-Now that you've rebuilt the codespace, let's verify the python extension, python version, and custom script were adjusted correctly in the Codespace.
+codespace を再ビルドしたので、Python の拡張機能、Python のバージョン、独自スクリプトが正しく反映されたか確認します。
 
-1. Ensure you are in the Codespace.
+1. codespace にいることを確認します。
 
-1. In the left sidebar, click the extensions tab and verify that the Python extensions are installed and enabled.
+1. 左のサイドバーで拡張機能タブをクリックし、Python の拡張機能がインストールされ、有効になっているか確認します。
 
-   <img width="250" alt="python extensions for vs code" src="../images/python-extensions.png" />
+   <img width="250" alt="VS Code の Python 拡張機能" src="../images/python-extensions.png" />
 
-1. In the left sidebar, select **Run and Debug** tab and then press the **Start Debugging** icon. VS Code will open the lower panel and show the run logs.
+1. 左のサイドバーで **Run and Debug** タブを選び、**Start Debugging** のアイコンを押します。VS Code が下部パネルを開き、実行ログを表示します。
 
-   <img width="250" alt="run and debug tab pointing to start button" src="../images/run-and-debug-start-button.png"/>
+   <img width="250" alt="Run and Debug タブの開始ボタン" src="../images/run-and-debug-start-button.png"/>
 
-1. In the lower panel, switch to the **TERMINAL** tab.
+1. 下部パネルで **TERMINAL** タブに切り替えます。
 
-1. Run the following command to show the installed version of Python. Notice the others are not installed.
+1. 次のコマンドを実行して、入っている Python のバージョンを表示します。他のツールは入っていないことがわかります。
 
    ```bash
    node --version
@@ -150,7 +150,7 @@ Now that you've rebuilt the codespace, let's verify the python extension, python
    gh --version
    ```
 
-1. Run the following command to show the steam locomotive animation.
+1. 次のコマンドを実行して、蒸気機関車のアニメーションを表示します。
 
    ```bash
    sl

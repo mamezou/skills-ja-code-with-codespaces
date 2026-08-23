@@ -1,43 +1,43 @@
-## Step 4: Test out our Codespace
+## Step 4: 作った Codespace を試す
 
-The final test of our Codespace is to put ourselves in the position of an onboarding developer. Let's close everything and start up a new Codespace from nothing.
+最後のテストとして、新しく参加した開発者の立場になってみます。いったんすべて閉じて、何もない状態から新しい codespace を起動します。
 
-### ⌨️ Activity: Delete the existing codespace
+### ⌨️ やること: 今ある codespace を削除する
 
-1. Close the window running your VS Code Codespace.
+1. VS Code の codespace を実行しているウィンドウを閉じます。
 
-1. Navigate to your exercise repository.
+1. 演習用のリポジトリを開きます。
 
-1. Above the files list on the right, click the green **<> Code** button.
+1. ファイル一覧の右上にある緑色の **<> Code** ボタンをクリックします。
 
-1. Select the **Codespaces** tab to show the list of created Codespaces.
+1. **Codespaces** タブを選び、作成済みの codespace の一覧を表示します。
 
-   <img width="250" alt="list of codespaces" src="../images/codespaces-list.png" />
+   <img width="250" alt="codespace の一覧" src="../images/codespaces-list.png" />
 
-1. Find the active entry, select the three dot menu `...`, and select the **Delete** command.
+1. 動いているものを見つけ、三点メニュー `...` から **Delete** を選びます。
 
-   <img width="500" alt="delete codespace command" src="../images/delete-codespace-command.png" />
+   <img width="500" alt="codespace の削除コマンド" src="../images/delete-codespace-command.png" />
 
 > [!TIP]
-> You can manage all of your Codespaces across all projects at https://github.com/codespaces
+> すべてのプロジェクトの codespace は https://github.com/codespaces でまとめて管理できます。
 
-### ⌨️ Activity: Start a codespace
+### ⌨️ やること: codespace を起動する
 
-1. Above the files list on the right, click the green **<> Code** button.
+1. ファイル一覧の右上にある緑色の **<> Code** ボタンをクリックします。
 
-1. Select the **Codespaces** tab and click the **plus sign** `+` or **Create codespace on main** button.
+1. **Codespaces** タブを選び、**プラス記号** `+` または **Create codespace on main** ボタンをクリックします。
 
-   > Alternately you can select the three dot menu `...` to choose a different machine type, location, or configuration.
+   > 三点メニュー `...` を選ぶと、マシンの種類、リージョン、設定を変えることもできます。
 
-1. Wait a few minutes for the Codespace to be created and VS Code to connect.
+1. codespace の作成と VS Code の接続に数分かかるので待ちます。
 
-1. (optional) Test out some of the activities from the previous steps to see if they still work!
+1. (任意) 前の Step でやったことをいくつか試して、同じように動くか確かめます。
 
-1. Add an issue comment to let Mona know you finished this activity, then give her a moment to share the final review.
+1. テストが終わったことを Mona に知らせるため、Issue にコメントを追加します。コメント後、最終レビューが投稿されるまで少し待ちます。
 
    ```md
    Hey @professortocat, I've finished testing out my new Codespace.
    I'm ready to review!
    ```
 
-1. Nice work! You are all done! 🎉
+1. お疲れさまでした。完了です！ 🎉

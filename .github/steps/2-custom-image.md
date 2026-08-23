@@ -1,33 +1,33 @@
-## Step 2: Use a custom image in your codespace
+## Step 2: codespace でカスタムイメージを使う
 
-The repository didn't specify any configuration for the codespace we just created, so GitHub used a default Docker image. While this is very useful, it won't be consistent and it doesn't version lock our runtime environment. Specifying the configuration is important to keep the development environment repeatable.
+さきほど作った codespace には、リポジトリ側の設定がありませんでした。設定がないため、GitHub は既定の Docker イメージを使いました。既定のイメージは便利ですが、内容が一定にならず、実行環境のバージョンも固定されません。開発環境を何度でも同じ形で作るには、設定を指定することが重要です。
 
-Let's do that now by providing a specific docker container image.
+使う Docker コンテナーイメージを指定してみます。
 
-### How to configure a Codespace?
+### codespace はどう設定するのか
 
-Configuration is provided directly in the repository via the `.devcontainer/devcontainer.json`. You can even add multiple configurations!
+設定はリポジトリの中の `.devcontainer/devcontainer.json` で直接指定します。設定を複数持つこともできます。
 
-Let's create this file and set a few of the most common settings. For other options like setting configuring VS Code, forwarding ports, and running lifecycle scripts, see the [Codespaces documentation](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces) on GitHub.
+`devcontainer.json` を作り、よく使う設定をいくつか入れてみましょう。VS Code の設定、ポート転送、ライフサイクルスクリプトの実行といった他の項目については、GitHub の [Codespaces ドキュメント](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces)を参照してください。
 
-### ⌨️ Activity: Customize the codespace
+### ⌨️ やること: codespace をカスタマイズする
 
-1. Ensure you are in the VS Code Codespace.
+1. VS Code の codespace にいることを確認します。
 
-1. Use the VS Code file explorer to create the configuration file.
+1. VS Code のファイルエクスプローラーで、設定ファイルを作ります。
 
    ```txt
    .devcontainer/devcontainer.json
    ```
 
-   Alternately, run the below terminal command to create it.
+   または、次のターミナルコマンドでも作れます。
 
    ```bash
    mkdir -p .devcontainer
    touch .devcontainer/devcontainer.json
    ```
 
-1. Open the `.devcontainer/devcontainer.json` file and add the following content. Let's start with a basic image.
+1. `.devcontainer/devcontainer.json` を開き、次の内容を追加します。まずは基本的なイメージから始めます。
 
    ```json
    {
@@ -36,17 +36,17 @@ Let's create this file and set a few of the most common settings. For other opti
    }
    ```
 
-   > 💡 **Tip**: The name is optional but it will help identify the configuration when creating a codespace on GitHub, if there are multiple options.
+   > 💡 **ヒント**: name は任意ですが、設定が複数あるとき、GitHub で codespace を作る際に見分けやすくなります。
 
-1. After saving, VS Code likely popped up a notification that it detected a configuration change. You can **Accept** that option to rebuild the development container or manually use the Command Palette (`CTRL`+`Shift`+`P`) and run the command `Codespaces: Rebuild Container`. Select the **Rebuild** option. A full build is not necessary.
+1. 保存すると、VS Code に設定の変更を検出したという通知が出ているはずです。**Accept** を選ぶと開発コンテナーが再ビルドされます。または、コマンドパレット (`CTRL`+`Shift`+`P`) から `Codespaces: Rebuild Container` を実行します。**Rebuild** を選びます。フルビルドは必要ありません。
 
-   <img width="350" alt="rebuild codespace command" src="../images/rebuild-codespace-command.png"/>
+   <img width="350" alt="rebuild codespace コマンド" src="../images/rebuild-codespace-command.png"/>
 
-1. Wait a few minutes for the Codespace to rebuild and VS Code to reconnect.
+1. codespace の再ビルドと VS Code の再接続に数分かかるので待ちます。
 
-1. Expand the lower panel and select the **TERMINAL** tab.
+1. 下部パネルを開き、**TERMINAL** タブを選びます。
 
-1. Use the following command to check the tool versions again. Notice that none are installed now!
+1. 次のコマンドでツールのバージョンをもう一度確認します。どれも入っていないことがわかります。
 
    ```bash
    node --version
@@ -55,7 +55,7 @@ Let's create this file and set a few of the most common settings. For other opti
    gh --version
    ```
 
-1. ⚠️ There is currently a bug with Codespaces that expects [Git-LFS](https://git-lfs.com/) to be installed. Run the following command to remove the affected Git hooks.
+1. ⚠️ 現在、Codespaces には [Git-LFS](https://git-lfs.com/) がインストールされている前提になっている不具合があります。次のコマンドを実行して、影響を受ける Git フックを削除します。
 
    ```bash
    rm .git/hooks/post-checkout
@@ -64,7 +64,7 @@ Let's create this file and set a few of the most common settings. For other opti
    rm .git/hooks/pre-push
    ```
 
-1. With our new configuration verified, let's commit the changes. Use VS Code's source control tools or the below terminal command.
+1. 新しい設定を確認できたので、変更をコミットします。VS Code のソース管理の機能を使うか、次のターミナルコマンドを使います。
 
    ```bash
    git add '.devcontainer/devcontainer.json'
@@ -72,4 +72,4 @@ Let's create this file and set a few of the most common settings. For other opti
    git push
    ```
 
-1. With our dev container configuration committed, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.
+1. dev container の設定をコミットしたので、Mona が作業を確認しています。少し待って、コメントを見てください。進捗と次の Step が投稿されます。
