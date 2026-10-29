@@ -123,7 +123,7 @@ Dev Container specification には、codespace をさらにカスタマイズす
 1. カスタマイズをコミットしたので、Mona が作業を確認しています。少し待って、コメントを見てください。進捗と次の Step が投稿されます。
 
 > [!TIP]
-> アカウントに [dotfiles をインストールする](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account)設定もできます。個人の設定とプロジェクトの設定を組み合わせられます。
+> アカウントに [dotfiles をインストールする](https://docs.github.com/ja/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account)設定もできます。個人の設定とプロジェクトの設定を組み合わせられます。
 
 ### ⌨️ やること: (任意) カスタマイズを確認する
 
