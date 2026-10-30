@@ -8,7 +8,7 @@
 
 設定はリポジトリの中の `.devcontainer/devcontainer.json` で直接指定します。設定を複数持つこともできます。
 
-`devcontainer.json` を作り、よく使う設定をいくつか入れてみましょう。VS Code の設定、ポート転送、ライフサイクルスクリプトの実行といった他の項目については、GitHub の [Codespaces ドキュメント](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces)を参照してください。
+`devcontainer.json` を作り、よく使う設定をいくつか入れてみましょう。VS Code の設定、ポート転送、ライフサイクルスクリプトの実行といった他の項目については、GitHub の [Codespaces ドキュメント](https://docs.github.com/ja/codespaces/setting-up-your-project-for-codespaces)を参照してください。
 
 ### ⌨️ やること: codespace をカスタマイズする
 
